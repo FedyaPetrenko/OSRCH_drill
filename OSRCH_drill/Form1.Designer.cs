@@ -51,13 +51,13 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(12, 553);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(404, 160);
+            this.richTextBox1.Size = new System.Drawing.Size(483, 160);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // saveLogBtn
             // 
-            this.saveLogBtn.Location = new System.Drawing.Point(423, 553);
+            this.saveLogBtn.Location = new System.Drawing.Point(501, 553);
             this.saveLogBtn.Name = "saveLogBtn";
             this.saveLogBtn.Size = new System.Drawing.Size(100, 34);
             this.saveLogBtn.TabIndex = 1;
@@ -109,7 +109,7 @@
             // 
             // resetLogBtn
             // 
-            this.resetLogBtn.Location = new System.Drawing.Point(422, 679);
+            this.resetLogBtn.Location = new System.Drawing.Point(501, 679);
             this.resetLogBtn.Name = "resetLogBtn";
             this.resetLogBtn.Size = new System.Drawing.Size(100, 34);
             this.resetLogBtn.TabIndex = 7;
@@ -119,7 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(604, 604);
+            this.label1.Location = new System.Drawing.Point(611, 604);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 8;
