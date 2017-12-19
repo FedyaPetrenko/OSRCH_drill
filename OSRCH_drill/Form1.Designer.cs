@@ -36,7 +36,6 @@
             this.mainPictureBox = new System.Windows.Forms.PictureBox();
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.resetLogBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.wearoutBtn = new System.Windows.Forms.Button();
             this.poweroffBtn = new System.Windows.Forms.Button();
@@ -51,7 +50,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(9, 449);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(363, 131);
             this.richTextBox1.TabIndex = 0;
@@ -60,7 +59,7 @@
             // saveLogBtn
             // 
             this.saveLogBtn.Location = new System.Drawing.Point(376, 449);
-            this.saveLogBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveLogBtn.Margin = new System.Windows.Forms.Padding(2);
             this.saveLogBtn.Name = "saveLogBtn";
             this.saveLogBtn.Size = new System.Drawing.Size(75, 28);
             this.saveLogBtn.TabIndex = 1;
@@ -70,7 +69,7 @@
             // loadBtn
             // 
             this.loadBtn.Location = new System.Drawing.Point(455, 449);
-            this.loadBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loadBtn.Margin = new System.Windows.Forms.Padding(2);
             this.loadBtn.Name = "loadBtn";
             this.loadBtn.Size = new System.Drawing.Size(79, 28);
             this.loadBtn.TabIndex = 2;
@@ -81,7 +80,7 @@
             // startBtn
             // 
             this.startBtn.Location = new System.Drawing.Point(455, 519);
-            this.startBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startBtn.Margin = new System.Windows.Forms.Padding(2);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(79, 28);
             this.startBtn.TabIndex = 3;
@@ -91,7 +90,7 @@
             // stopBtn
             // 
             this.stopBtn.Location = new System.Drawing.Point(455, 552);
-            this.stopBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.stopBtn.Margin = new System.Windows.Forms.Padding(2);
             this.stopBtn.Name = "stopBtn";
             this.stopBtn.Size = new System.Drawing.Size(79, 28);
             this.stopBtn.TabIndex = 4;
@@ -101,7 +100,7 @@
             // mainPictureBox
             // 
             this.mainPictureBox.Location = new System.Drawing.Point(9, 10);
-            this.mainPictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.mainPictureBox.Name = "mainPictureBox";
             this.mainPictureBox.Size = new System.Drawing.Size(525, 435);
             this.mainPictureBox.TabIndex = 5;
@@ -110,7 +109,7 @@
             // profilePictureBox
             // 
             this.profilePictureBox.Location = new System.Drawing.Point(538, 10);
-            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.profilePictureBox.Name = "profilePictureBox";
             this.profilePictureBox.Size = new System.Drawing.Size(207, 435);
             this.profilePictureBox.TabIndex = 6;
@@ -119,22 +118,12 @@
             // resetLogBtn
             // 
             this.resetLogBtn.Location = new System.Drawing.Point(376, 552);
-            this.resetLogBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetLogBtn.Margin = new System.Windows.Forms.Padding(2);
             this.resetLogBtn.Name = "resetLogBtn";
             this.resetLogBtn.Size = new System.Drawing.Size(75, 28);
             this.resetLogBtn.TabIndex = 7;
             this.resetLogBtn.Text = "Reset Log";
             this.resetLogBtn.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(458, 491);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "label1";
             // 
             // groupBox1
             // 
@@ -143,9 +132,9 @@
             this.groupBox1.Controls.Add(this.overheightBtn);
             this.groupBox1.Controls.Add(this.overheatBtn);
             this.groupBox1.Location = new System.Drawing.Point(538, 449);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(207, 130);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
@@ -155,7 +144,7 @@
             // 
             this.wearoutBtn.ForeColor = System.Drawing.Color.Black;
             this.wearoutBtn.Location = new System.Drawing.Point(110, 70);
-            this.wearoutBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wearoutBtn.Margin = new System.Windows.Forms.Padding(2);
             this.wearoutBtn.Name = "wearoutBtn";
             this.wearoutBtn.Size = new System.Drawing.Size(92, 55);
             this.wearoutBtn.TabIndex = 3;
@@ -166,7 +155,7 @@
             // 
             this.poweroffBtn.ForeColor = System.Drawing.Color.Red;
             this.poweroffBtn.Location = new System.Drawing.Point(4, 70);
-            this.poweroffBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.poweroffBtn.Margin = new System.Windows.Forms.Padding(2);
             this.poweroffBtn.Name = "poweroffBtn";
             this.poweroffBtn.Size = new System.Drawing.Size(92, 55);
             this.poweroffBtn.TabIndex = 2;
@@ -176,7 +165,7 @@
             // overheightBtn
             // 
             this.overheightBtn.Location = new System.Drawing.Point(110, 17);
-            this.overheightBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.overheightBtn.Margin = new System.Windows.Forms.Padding(2);
             this.overheightBtn.Name = "overheightBtn";
             this.overheightBtn.Size = new System.Drawing.Size(92, 48);
             this.overheightBtn.TabIndex = 1;
@@ -186,7 +175,7 @@
             // overheatBtn
             // 
             this.overheatBtn.Location = new System.Drawing.Point(4, 17);
-            this.overheatBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.overheatBtn.Margin = new System.Windows.Forms.Padding(2);
             this.overheatBtn.Name = "overheatBtn";
             this.overheatBtn.Size = new System.Drawing.Size(92, 48);
             this.overheatBtn.TabIndex = 0;
@@ -203,7 +192,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 586);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.resetLogBtn);
             this.Controls.Add(this.profilePictureBox);
             this.Controls.Add(this.mainPictureBox);
@@ -212,14 +200,13 @@
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.saveLogBtn);
             this.Controls.Add(this.richTextBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Mein Drill";
             ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -233,7 +220,6 @@
         private System.Windows.Forms.PictureBox mainPictureBox;
         private System.Windows.Forms.PictureBox profilePictureBox;
         private System.Windows.Forms.Button resetLogBtn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button poweroffBtn;
         private System.Windows.Forms.Button overheightBtn;

@@ -12,6 +12,7 @@ namespace OSRCH_drill
 {
     public partial class Form1 : Form
     {
+        private Dictionary<string, string> commands; 
         public Form1()
         {
             InitializeComponent();
@@ -20,12 +21,17 @@ namespace OSRCH_drill
 
         private void loadBtn_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 System.IO.StreamReader sr = new
                    System.IO.StreamReader(openFileDialog1.FileName);
                 string content = sr.ReadToEnd();
-                MessageBox.Show(content);
+                string[] split = content.Split(new[] {'>'}, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var str in split)
+                {
+                    
+                }
+                //MessageBox.Show(content);
                 sr.Close();
             }
         }
