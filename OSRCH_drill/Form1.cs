@@ -15,6 +15,19 @@ namespace OSRCH_drill
         public Form1()
         {
             InitializeComponent();
+            
+        }
+
+        private void loadBtn_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new
+                   System.IO.StreamReader(openFileDialog1.FileName);
+                string content = sr.ReadToEnd();
+                MessageBox.Show(content);
+                sr.Close();
+            }
         }
     }
 }
