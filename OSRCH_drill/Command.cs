@@ -8,7 +8,7 @@ namespace OSRCH_drill
 {
     public class Command
     {
-        public string CommandName { get; set; }
-        public string Parameter { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> Parameter { get; set; }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.saveLogBtn = new System.Windows.Forms.Button();
             this.loadBtn = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.poweroffBtn = new System.Windows.Forms.Button();
             this.overheightBtn = new System.Windows.Forms.Button();
             this.overheatBtn = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -49,26 +50,28 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(9, 449);
+            this.richTextBox1.Location = new System.Drawing.Point(9, 524);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(363, 131);
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(370, 131);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // saveLogBtn
             // 
-            this.saveLogBtn.Location = new System.Drawing.Point(376, 449);
+            this.saveLogBtn.Location = new System.Drawing.Point(383, 524);
             this.saveLogBtn.Margin = new System.Windows.Forms.Padding(2);
             this.saveLogBtn.Name = "saveLogBtn";
             this.saveLogBtn.Size = new System.Drawing.Size(75, 28);
             this.saveLogBtn.TabIndex = 1;
             this.saveLogBtn.Text = "Save Log";
             this.saveLogBtn.UseVisualStyleBackColor = true;
+            this.saveLogBtn.Click += new System.EventHandler(this.saveLogBtn_Click);
             // 
             // loadBtn
             // 
-            this.loadBtn.Location = new System.Drawing.Point(455, 449);
+            this.loadBtn.Location = new System.Drawing.Point(462, 524);
             this.loadBtn.Margin = new System.Windows.Forms.Padding(2);
             this.loadBtn.Name = "loadBtn";
             this.loadBtn.Size = new System.Drawing.Size(79, 28);
@@ -79,51 +82,60 @@
             // 
             // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(455, 519);
+            this.startBtn.Location = new System.Drawing.Point(462, 594);
             this.startBtn.Margin = new System.Windows.Forms.Padding(2);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(79, 28);
             this.startBtn.TabIndex = 3;
             this.startBtn.Text = "Start";
             this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // stopBtn
             // 
-            this.stopBtn.Location = new System.Drawing.Point(455, 552);
+            this.stopBtn.Location = new System.Drawing.Point(462, 627);
             this.stopBtn.Margin = new System.Windows.Forms.Padding(2);
             this.stopBtn.Name = "stopBtn";
             this.stopBtn.Size = new System.Drawing.Size(79, 28);
             this.stopBtn.TabIndex = 4;
             this.stopBtn.Text = "Stop";
             this.stopBtn.UseVisualStyleBackColor = true;
+            this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
             // 
             // mainPictureBox
             // 
+            this.mainPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainPictureBox.BackgroundImage")));
+            this.mainPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.mainPictureBox.Location = new System.Drawing.Point(9, 10);
             this.mainPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.mainPictureBox.Name = "mainPictureBox";
-            this.mainPictureBox.Size = new System.Drawing.Size(525, 435);
+            this.mainPictureBox.Size = new System.Drawing.Size(525, 487);
             this.mainPictureBox.TabIndex = 5;
             this.mainPictureBox.TabStop = false;
+            this.mainPictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPictureBox_Paint);
             // 
             // profilePictureBox
             // 
+            this.profilePictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("profilePictureBox.BackgroundImage")));
+            this.profilePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.profilePictureBox.Location = new System.Drawing.Point(538, 10);
             this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(207, 435);
+            this.profilePictureBox.Size = new System.Drawing.Size(225, 487);
             this.profilePictureBox.TabIndex = 6;
             this.profilePictureBox.TabStop = false;
+            this.profilePictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.profilePictureBox_Paint);
             // 
             // resetLogBtn
             // 
-            this.resetLogBtn.Location = new System.Drawing.Point(376, 552);
+            this.resetLogBtn.Location = new System.Drawing.Point(383, 627);
             this.resetLogBtn.Margin = new System.Windows.Forms.Padding(2);
             this.resetLogBtn.Name = "resetLogBtn";
             this.resetLogBtn.Size = new System.Drawing.Size(75, 28);
             this.resetLogBtn.TabIndex = 7;
             this.resetLogBtn.Text = "Reset Log";
             this.resetLogBtn.UseVisualStyleBackColor = true;
+            this.resetLogBtn.Click += new System.EventHandler(this.resetLogBtn_Click);
             // 
             // groupBox1
             // 
@@ -131,11 +143,11 @@
             this.groupBox1.Controls.Add(this.poweroffBtn);
             this.groupBox1.Controls.Add(this.overheightBtn);
             this.groupBox1.Controls.Add(this.overheatBtn);
-            this.groupBox1.Location = new System.Drawing.Point(538, 449);
+            this.groupBox1.Location = new System.Drawing.Point(545, 524);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(207, 130);
+            this.groupBox1.Size = new System.Drawing.Size(217, 130);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interrupts";
@@ -143,13 +155,14 @@
             // wearoutBtn
             // 
             this.wearoutBtn.ForeColor = System.Drawing.Color.Black;
-            this.wearoutBtn.Location = new System.Drawing.Point(110, 70);
+            this.wearoutBtn.Location = new System.Drawing.Point(121, 69);
             this.wearoutBtn.Margin = new System.Windows.Forms.Padding(2);
             this.wearoutBtn.Name = "wearoutBtn";
             this.wearoutBtn.Size = new System.Drawing.Size(92, 55);
             this.wearoutBtn.TabIndex = 3;
             this.wearoutBtn.Text = "Wearout";
             this.wearoutBtn.UseVisualStyleBackColor = true;
+            this.wearoutBtn.Click += new System.EventHandler(this.wearoutBtn_Click);
             // 
             // poweroffBtn
             // 
@@ -161,16 +174,18 @@
             this.poweroffBtn.TabIndex = 2;
             this.poweroffBtn.Text = "PowerOff";
             this.poweroffBtn.UseVisualStyleBackColor = true;
+            this.poweroffBtn.Click += new System.EventHandler(this.poweroffBtn_Click);
             // 
             // overheightBtn
             // 
-            this.overheightBtn.Location = new System.Drawing.Point(110, 17);
+            this.overheightBtn.Location = new System.Drawing.Point(121, 17);
             this.overheightBtn.Margin = new System.Windows.Forms.Padding(2);
             this.overheightBtn.Name = "overheightBtn";
             this.overheightBtn.Size = new System.Drawing.Size(92, 48);
             this.overheightBtn.TabIndex = 1;
             this.overheightBtn.Text = "OverHeight";
             this.overheightBtn.UseVisualStyleBackColor = true;
+            this.overheightBtn.Click += new System.EventHandler(this.overheightBtn_Click);
             // 
             // overheatBtn
             // 
@@ -181,16 +196,13 @@
             this.overheatBtn.TabIndex = 0;
             this.overheatBtn.Text = "Overheating";
             this.overheatBtn.UseVisualStyleBackColor = true;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.overheatBtn.Click += new System.EventHandler(this.overheatBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 586);
+            this.ClientSize = new System.Drawing.Size(774, 665);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.resetLogBtn);
             this.Controls.Add(this.profilePictureBox);
@@ -200,9 +212,15 @@
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.saveLogBtn);
             this.Controls.Add(this.richTextBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mein Drill";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -225,7 +243,7 @@
         private System.Windows.Forms.Button overheightBtn;
         private System.Windows.Forms.Button overheatBtn;
         private System.Windows.Forms.Button wearoutBtn;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }
 

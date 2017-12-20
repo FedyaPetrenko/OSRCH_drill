@@ -10,6 +10,14 @@ namespace OSRCH_drill
     {
         #region Singleton
         private static Drill instance;
+        private static Random rand;
+        private static readonly int _minTemperature = 25;
+        private static readonly int _maxTemperature = 250;
+
+        static Drill()
+        {
+            rand = new Random();
+        }
 
         public Drill()
         {
@@ -19,22 +27,26 @@ namespace OSRCH_drill
                 {
                     DrillBitId = 1,
                     Diameter = 3,
-                    Height = 10
+                    Height = 10,
+                    Image = "Images/bit1.png"
                 },
                 new DrillBit
                 {
                     DrillBitId = 2,
                     Diameter = 5,
-                    Height = 10
+                    Height = 10,
+                    Image = "Images/bit2.png"
                 },
                 new DrillBit
                 {
                     DrillBitId = 3,
                     Diameter = 10,
-                    Height = 30
+                    Height = 30,
+                    Image = "Images/bit3.png"
                 },
 
             };
+            ActiveBit = Bits.First();
         }
 
         public static Drill Instance
@@ -55,10 +67,16 @@ namespace OSRCH_drill
         public int positionX { get; set; }
         public int positionY { get; set; }
         public int positionZ { get; set; }
-        public int DrillTemp { get; set; }
         public int WaterInputFrequency { get; set; }
         public DrillBit ActiveBit { get; set; }
         public List<DrillBit> Bits { get; set; }
+        public int DrillTemp
+        {
+            get
+            {
+                return rand.Next(_minTemperature, _maxTemperature);
+            }
+        }
 
         public bool LaunchMachine()
         {
@@ -102,10 +120,10 @@ namespace OSRCH_drill
             WaterInputFrequency = count;
             return WaterInputFrequency;
         }
-            
-        public int GetCurrentDrillTemperature()
+
+        public string GetCurrentDrillTemperature()
         {
-            return DrillTemp;
+            return "Drill temperature: " + DrillTemp;
         }
 
     }
@@ -115,6 +133,6 @@ namespace OSRCH_drill
         public int DrillBitId { get; set; }
         public int Diameter { get; set; }
         public int Height { get; set; }
-        public bool isActive { get; set; }
+        public string Image { get; set; }
     }
 }
