@@ -90,35 +90,41 @@ namespace OSRCH_drill
             return !isOn;
         }
 
-        public int MoveX(int distance)
+        public string MoveX(int distance)
         {
-            return positionX += distance;
+            positionX += distance;
+            return "X : " + positionX; 
         }
-        public int MoveY(int distance)
+        public string MoveY(int distance)
         {
-            return positionY += distance;
+            positionY += distance;
+            return "Y : " + positionY;
         }
-        public int MoveZ(int distance)
+        public string MoveZ(int distance)
         {
-            return positionZ += distance;
+            positionZ += distance;
+            return "Z : " + positionZ;
         }
 
-        public int SetRPM(int rpm)
+        public string SetRPM(int rpm)
         {
-            return RPM = rpm;
+            RPM = rpm;
+            return "Drill RPM: " + RPM;
         }
-        public void ChangeDrill(int drillId)
+        public string ChangeDrill(int drillId)
         {
             if (Bits.Any(bit => bit.DrillBitId == drillId))
             {
                 ActiveBit = Bits.FirstOrDefault(bit => bit.DrillBitId == drillId);
             }
+
+            return "Current bit id: " + ActiveBit.DrillBitId;
         }
 
-        public int SetWaterInputFrequency(int count)
+        public string SetWaterInputFrequency(int count)
         {
             WaterInputFrequency = count;
-            return WaterInputFrequency;
+            return "Water imput frequency every: " + WaterInputFrequency + "second";
         }
 
         public string GetCurrentDrillTemperature()

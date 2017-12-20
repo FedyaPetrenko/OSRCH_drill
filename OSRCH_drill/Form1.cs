@@ -119,6 +119,8 @@ namespace OSRCH_drill
 
         private void startBtn_Click(object sender, EventArgs e)
         {
+            CanWork = true;
+
             backgroundWorker.RunWorkerAsync();
         }
 
@@ -135,7 +137,15 @@ namespace OSRCH_drill
                         var method = typeof(Drill).GetMethod(command.Name);
                         if (method.GetParameters() != null && method.GetParameters().Length > 0)
                         {
-                            method.Invoke(drill, new object[] { command.Parameter });
+                            if (method.ReturnParameter != null)
+                            {
+                                var result = method.Invoke(drill, new object[] { command.Parameter });
+                                WriteLogMessage(result.ToString());
+                            }
+                            else
+                            {
+                                method.Invoke(drill, new object[] { command.Parameter });
+                            }
                         }
                         else
                         {
